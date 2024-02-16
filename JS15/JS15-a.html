@@ -7,18 +7,18 @@
 </head>
 <body>
     <p>BEBIDAS:</p>
-    <ul id="lista">
+    <ol id="lista">
     <li>Coffee</li>
     <li>Tea</li>
     <li>Milk</li>
     <li>Cola</li>
     <li>Cerveza</li>
     <li>Vino</li>
-    </ul>
-    Elige una bebida: <input type="number" id="cantidad" placeholder="indique un numeros">
+    </ol>
+    Elige una bebida: <input type="number" min="1" max="6" id="cantidad" placeholder="indique un numeros">
     <input type="button" value="MOSTRAR" onclick="calcular()" name=""><br>
     <div id="resultado"></div>
-    <p>El número mayor es: <span id="resultado"></span></p>
+    <p>La bebida elegida es: <span id="resultado"></span></p>
     <script src="JS15-a.js">
     </script>
 </body>

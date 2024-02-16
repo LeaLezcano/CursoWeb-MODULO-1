@@ -1,0 +1,24 @@
+form {
+    width: 500px;
+    margin: 0px auto;
+    border: black solid 1px;
+    padding: 10px 30px 10px 30px;
+    background-color: lightcoral;
+}
+div {
+    width: 500px;
+    margin: 0px auto;
+    border: black solid 1px;
+    padding: 10px 30px 10px 30px;
+    background-color: aliceblue;
+}
+label{
+    display: inline-block;
+}
+input {
+    width: 60%;
+    display: inline-block;
+}
+#manana, #tarde {
+    width: 10%;
+}

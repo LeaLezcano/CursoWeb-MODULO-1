@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="formulario.css">
+    <title>Formulario de inscripción</title>
+</head>
+
+<body>
+    <h1>COMPLETE EL FORMULARIO</h1>
+    <form id="formulario" onsubmit="return imprimirformulario()" action="#">
+        <label for="nombre">NOMBRE: </label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="apellido1">PRIMER APELLIDO: </label>
+        <input type="text" id="apellido1" name="apellido1" required><br>
+
+        <label for="apellido2">SEGUNDO APELLIDO: </label>
+        <input type="text" id="apellido2" name="apellido2" required><br>
+
+        <label for="telefono">TELÉFONO: </label>
+        <input type="number" id="telefono" name="telefono" pattern="[0-9]{9}" required><br>
+
+        <label for="fechaNac">FECHA DE NACIMIENTO: </label>
+        <input type="text" id="fechaNac" name="fechaNac" required><br>
+
+        <label for="email"> CORREO ELECTRÓNICO: </label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="turno">SELECCIONE EL TURNO: </label><br>
+        <input type="radio" value="manana" id="manana" name="turno"> <label>MAÑANA</label>
+        <input type="radio" value="tarde" id="tarde" name="turno"> <label>TARDE</label>
+        <br>
+        <label for="interes">INTERÉS: </label>
+        <select id="interes" name="interes">
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JS">JS</option>
+        </select>
+        <br>
+        <label for="privacidad"> Acepto las condiciones de privacidad </label>
+        <input type="checkbox" value="privacidad" name="privacidad" id="privacidad" required>
+        <br>
+        <input type="submit" value="ENVIAR">
+        <input type="reset" name="RESET">
+    </form>
+    <div id="datos">
+    </div>
+    <script>
+        function imprimirformulario() {
+            var nombre = document.getElementById("nombre").value;
+            var apellido1 = document.getElementById("apellido1").value;
+            var apellido2 = document.getElementById("apellido2").value;
+            var telefono = document.getElementById("telefono").value;
+            var fechaNac = document.getElementById("fechaNac").value;
+            var email = document.getElementById("email").value;
+            var turno = document.querySelector('input[name="turno"]:checked').value;
+            var privacidad = document.getElementById("privacidad").checked;
+            if (!turno) {
+                alert("No seleccionó turno");
+                return false
+            }
+            var datosImpresos = "Datos ingresados: <br>" +
+                "Nombre: " + nombre + "<br>" +
+                "Apellido 1: " + apellido1 + "<br>" +
+                "Apellido 2: " + apellido2 + "<br>" +
+                "Teléfono: " + telefono + "<br>" +
+                "Fecha de Nacimiento: " + fechaNac + "<br>" +
+                "Correo: " + (email || "No dado") + "<br>" +
+                "Turno elegido: " + turno + "<br>" +
+                "Privacidad: " + (privacidad ? "SI" : "NO");
+            document.getElementById("datos").innerHTML = datosImpresos;
+            return false;
+        }
+    </script>
+</body>
+
+</html>

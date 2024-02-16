@@ -1,9 +1,8 @@
+let bebida = document.getElementsByTagName("li");
 function calcular() {
-    var bebida = document.getElementsByTagName("LI");
-    console.log(bebida);
-    if (bebida[i]==bebidaelegida){
-            alert("Tu elección es: " +bebida[i].innerHTML);
-    }
+    let bebidaelegida = Number(document.getElementById("cantidad").value -1);
+    //bebidaelegida=parseInt(bebidaelegida)
+    document.getElementById("resultado").innerHTML = bebida[bebidaelegida].innerHTML;
 }
-var bebidaelegida = prompt("elija un numero");
-calcular(bebidaelegida);
+/*var bebidaelegida = document.getElementById("cantidad");
+calcular(bebidaelegida);*/

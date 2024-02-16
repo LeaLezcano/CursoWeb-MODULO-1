@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calcular() {
+            var bebidas = document.getElementsById("lista")
+            var elemento = document.createElement("li");
+            var bebidaNueva = document.getElementById("bebida").value;
+            var bebidaIns = document.createTextNode(bebidaNueva);
+            elemento.appendChild(bebidaIns);
+            bebidas.appendChild(elemento);
+        }
+    </script>
+</head>
+
+<body>
+    <p>BEBIDAS:</p>
+    <ol id="lista">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+        <li>Cola</li>
+        <li>Cerveza</li>
+        <li>Vino</li>
+    </ol>
+    Elige una nueva bebida: <input type="text" id="bebida" placeholder="indique una nueva bebida">
+    <input type="button" value="MOSTRAR" onclick="calcular()"><br>
+    <p>La bebida elegida es: <span id="resultado"></span></p>
+</body>
+
+</html>
