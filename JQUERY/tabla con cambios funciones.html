@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        table {
+            margin: 50px auto;
+            width: 600px;
+        }
+        table, th, td {
+            border: 1px solid green
+        }
+        #a0{
+            background-color: antiquewhite;
+        }
+        img{
+            max-width: 100%;
+            height: 100%;
+            margin-left: 20%;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td id="a0" style="width: 33%;height: 50px"></td>
+            <td id="a1" style="width: 33%;height: 50px"></td>
+            <td id="a2" style="width: 33%;height: 50px"></td>
+        </tr>
+        <tr>
+            <td id="a3" style="width: 33%;height: 50px"></td>
+            <td id="a4" style="width: 33%;height: 50px"><img src="contento.jpg" alt=""></td>
+            <td id="a5" style="width: 33%;height: 50px"></td>
+        </tr>
+        <tr>
+            <td id="a6" style="width: 33%;height: 50px"></td>
+            <td id="a7" style="width: 33%;height: 50px"></td>
+            <td id="a8" style="width: 33%;height: 50px"></td>
+        </tr>
+    </table>
+    <input id="insertar" type="button" value="Agregar">
+    <input id="remover" type="button" value="Remover">
+    <p>
+    </p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#a0").hover(function(){
+                $(this).css({"background-color": "blue", "border":"1px solid green"
+            })
+            })
+            $("#a0").mouseout(function(){
+                $(this).css({"background-color":"antiquewhite"})
+            })
+            $("#a4").click(function(){
+                $("#a8").html($("#a4").html());
+                $("#a4").empty();
+            })
+            $("td").click(function(){
+                $(this).append("HOLA AMIGOS");
+                $("td").css({"background-color":"lightblue"})
+                $(this).css({"background-color":"yellow"});
+            })
+            $("#insertar").click(function(){
+                $("table").append(`<tr><td id="a6" style="width: 33%;height: 50px"></td>
+            <td id="a7" style="width: 33%;height: 50px"></td>
+            <td id="a8" style="width: 33%;height: 50px"></td>
+        </tr>`);
+            })
+            $("#remover").click(function(){
+                $("#a6, #a7, #a8").remove()
+            })
+    })
+    </script>
+</body>
+</html>

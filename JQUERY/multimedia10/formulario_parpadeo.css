@@ -1,0 +1,16 @@
+#registro { 
+    width: 300px; 
+    padding: 10px; 
+    border: 1px solid #333; 
+    border-radius: 10px; 
+    /* Animación */ 
+    animation: sombra ease-in infinite alternate 500ms; 
+}
+@keyframes sombra { 
+    0% { 
+        box-shadow: 0 0 15px red; 
+    } 
+    100% { 
+        box-shadow: 0 0 15px yellow; 
+    } 
+}

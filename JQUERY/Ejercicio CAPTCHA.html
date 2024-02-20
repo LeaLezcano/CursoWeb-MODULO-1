@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPTCHA</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        div {
+            display: none;
+            position: absolute;
+            width: 0px auto;
+            height: 80%;
+        }
+
+        #incorrecto {
+            background-color: yellow;
+        }
+
+        #ingreso {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <P>Ingrese el resultado de 5+9</P>
+    <input id="resultado" type="number" pattern="[0-9]{2}" required>
+    <input type="button" id="show" value="ENVIAR">
+    <div id="ingreso">FELICIDADES HAS INGRESADO!!!<img src="contento.jpg"></div>
+    <div id="incorrecto"> CREO QUE NO TIENES BIEN LAS MATES....INTENTA OTRA VEZ <img src="cara triste.jpg"> </div>
+    <script>
+
+        $(function () {
+            function submit() {
+                const resultadoCorr = 14;
+                if ($('#resultado').val() == resultadoCorr) {
+                    $('#ingreso').show(1500)
+                    $("#ingreso")
+                } else {
+                    $('#incorrecto').show(1500)
+                }
+            }
+            $('#incorrecto,#ingreso').click(function () {
+                $(this).hide(1000);
+            });
+            $('#show').click(function () {
+                submit();
+            });
+        })
+    </script>
+
+</body>
+
+</html>

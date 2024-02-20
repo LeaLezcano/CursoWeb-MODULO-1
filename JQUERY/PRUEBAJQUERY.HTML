@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRUEBA jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <P>PASA POR AQUÍ TU MOUSE</P>
+<script>
+    $(document).ready(function(){
+        $("p").on({
+            mouseenter: function(){
+                $(this).css("background-color","lightgray");
+            },
+            mouseleave: function(){
+                $(this).css("background-color","lightyellow")
+            },
+            click: function(){
+                $(this).css("background-color","blue")
+            }
+        });
+    });
+</script>
+</body>
+</html>
