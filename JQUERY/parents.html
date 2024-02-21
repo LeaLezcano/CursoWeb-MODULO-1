@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <STYLE>
+        #abuelo{
+            width: 95%;
+            margin: 100px auto;
+            border: 1px black solid;
+        }
+        #parents{
+            width: 70%;
+            height: 200px;
+            margin: 150px auto;
+            border: 1px black solid;
+        }
+        #child{
+            width: 30%;
+            height: 100px;
+            margin: 50px auto;
+            border: 1px black solid;
+            float: left;
+        }
+    </STYLE>
+    <title>PARENTS</title>
+</head>
+<body>
+    <div id="abuelo">
+        <div id="parents">
+            <div id="child">HOLA</div>
+            <div id="child">HOLA</div>
+            <div id="child">HOLA</div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $("#abuelo").css({"background-color":"red"});
+    $("#abuelo").children().css({"background-color":"yellow"});
+    $("#parents").children().eq(1).css({"background-color":"blue"});
+    $(function(){
+        $("div").click(function(){
+            $(this).css({"background-color":"pink"})
+        })
+    })
+</script>
+</body>
+</html>
