@@ -1,0 +1,56 @@
+body {
+    background-color: lightgray;
+}
+header {
+    width: 100%;
+    background-color: blue;
+    text-align: center;
+    height: 70px;
+    color: white;
+    font-size: 30px;
+}
+#contenido{
+    width: 90%;
+    float: left;
+    margin: 20px auto 0px auto;
+    text-align: center;
+}
+.imagen {
+  margin: 2% auto;
+  width: 90%;
+}
+#barra {
+    display: none;
+    float: right;
+    width: 9%;
+    background-color: lightgreen;
+    height: 820px;
+}
+img {
+    
+}
+#pie {
+    background-color: lightsalmon   ;
+  font-size: 20px;
+  text-align: center;
+  height: 40px;
+  float: left;
+  width: 100%;
+  color: lightgoldenrodyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contacto {
+    margin-left: 20px;
+    font-size: 15px;
+}
+#info {
+    font-size: 15px;
+    text-align: center;
+}
+@media all and (min-width: 768px) {
+    #barra {
+        display: inline-block;
+    }    
+}

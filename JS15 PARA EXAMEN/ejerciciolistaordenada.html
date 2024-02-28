@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            width: 100px;
+            margin: 20px;
+            margin-left: 100px;
+        }
+
+        #select {
+            margin-top: 10px;
+        }
+
+        .resultados {
+            width: 150px;
+        }
+
+        li {
+            width: 150px;
+            margin: 20px;
+            background-color: lightgreen;
+        }
+    </style>
+    <title>EXAMEN 27-2 LISTA ORDENADA</title>
+</head>
+
+<body>
+    <H1>LISTA ORDENADA</H1>
+    <ol id="lista">
+        <li>BALONCESTO</li>
+        <li>FUTBOL</li>
+        <li>VOLEY</li>
+        <li>RUGBY</li>
+        <li>TENIS</li>
+    </ol>
+    <div><input type="number" id="elegido" placeholder="inserte un número">
+        <input type="button" value="ELEGIR" id="select" onclick="elegir()">
+    </div>
+    <div class="resultados">EL NÚMERO ELEGIDO ES: <br>
+        <P id="resultado"></P>
+    </div>
+    <br>
+    <div><input type="text" id="deporte" placeholder="inserte un deporte para añadir">
+        <input type="button" value="AGREGAR" id="add" onclick="agregar()">
+    </div>
+    <br>
+    <div><input type="number" id="borrar" placeholder="inserte un número">
+        <input type="button" value="BORRAR" id="remove" onclick="borrar()">
+        <div class="eliminad">EL ELEGIDO QUE HA SIDO
+         <br>
+            <P id="resEliminado"></P>
+    </div>
+   
+    <script>
+        var lista = document.getElementsByTagName("li");
+        function elegir() {
+            var depElegido = Number(document.getElementById("elegido").value - 1);
+            document.getElementById("resultado").innerHTML = lista[depElegido].innerHTML;
+        }
+       function agregar() {
+            var listado = document.getElementById("lista");
+            var depNuevoElegido = document.createElement("li");
+            var depNuevoIns = document.getElementById("deporte").value.toUpperCase();
+            var depIns = document.createTextNode(depNuevoIns);
+            depNuevoElegido.appendChild(depIns);
+            listado.appendChild(depNuevoElegido);
+        }
+       function borrar() {
+            var lista = document.getElementsByTagName("li");
+            let depElegidos=Number(document.getElementById("borrar").value-1);
+            let elemento=lista[depElegidos];
+            document.getElementById("resEliminado").innerHTML= "ELIMINADO ES: " + elemento.innerHTML;
+            elemento.parentNode.removeChild(elemento);
+
+        }
+            </script>
+</body>
+
+</html>

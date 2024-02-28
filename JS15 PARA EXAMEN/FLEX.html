@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #contenedor {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            width: 700px;
+            margin: 30px auto;
+        }
+        #cuadro1, #cuadro2, #cuadro3, #cuadro4 {
+            display: flex;
+            width: 250px;
+        }
+        img {
+            width: 65%;
+        }
+        p {
+            width: 30%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+        }
+        #cuadro2 > p, #cuadro4 > p {
+            order: -1;
+        }
+        aside{
+            display: flex;
+            flex-wrap: wrap;
+            width: 70%;
+            justify-content: center;
+            margin: 0px auto;
+            display: none;
+        }
+        @media all and (min-width: 720px) {
+        main {
+            display: block;
+            background-color: blue;
+        }
+        aside {
+            display: flex;
+        }    
+        }
+    </style>
+    <title>EXAMEN 27/2</title>
+</head>
+<body>
+    <main id="contenedor">
+        <div id="cuadro1">
+            <img id="img1" src="..\imagenes\imagen1.jpg">
+            <p>HOLA</p>
+        </div>
+        <div id="cuadro2">
+            <img id="img2" src="..\imagenes\imagen2.jpg">
+            <p>HOLA</p>
+        </div>
+        <div id="cuadro3">
+            <img id="img3" src="..\imagenes\imagen3.jpg">
+            <p>HOLA</p>
+        </div>
+        <div id="cuadro4">
+            <img id="img4" src="..\imagenes\imagen4.jpg">
+            <p>HOLA</p>
+        </div>
+    </main>
+    <aside>
+<p>MIS REDES <br> Contacto</p> <img src="..\redes-sociales.png">
+    </aside>
+</body>
+<script>
+let mensaje = "gana la de afuera";    
+function muestraMensaje(){
+mensaje = "gana la de dentro";
+alert(mensaje);
+}
+alert(mensaje);
+muestraMensaje();
+alert(mensaje);
+/*
+    for (let t = 5;t>=2;t--) {
+            alert ('HOLA' + t);
+        }*/
+</script>
+    
+</html>

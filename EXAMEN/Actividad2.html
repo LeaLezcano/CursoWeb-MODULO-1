@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: linear-gradient(grey, lightsalmon, lightblue);
+        }
+        h1 {
+            font-style: italic;
+            text-align: center;
+            text-shadow: 1px 1px beige;
+            color: darkblue;
+        }
+        div {
+            width: 31%;
+            margin: 10px;
+            float: left;
+        }
+
+        #select {
+            margin-top: 10px;
+        }
+
+        .resultados {
+            width: 90%;
+            text-align: center;
+            color: green;
+            font-size: 14px;
+        }
+        li {
+            width: 150px;
+            margin: 20px auto;
+            background-color: #5cee5c;
+            text-align: center;
+            color: darkgreen;
+        }
+        .li2 {
+            background-color: lightblue;
+        }
+        .li3 {
+            background-color: lightsalmon;
+        }
+        .boton {
+            width: 90%;
+            border: 1px solid lightcoral;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .anadir {
+            border: lightgrey 1px solid;
+            margin: 20px 10px;
+            text-align: center;
+            color: blueviolet;
+            font-size: 14px;
+        }
+        #lista {
+            background-image: url(entrante.jpg);
+        }
+        #listaPP {
+            background-image: url(platoprincipal.jpg);
+        }
+        #listaP {
+            background-image: url(postre.jpg);
+            object-fit: cover;
+        }
+        ol {
+            list-style-type: none;
+            height: 50%;
+        }
+        .eliminad {
+            color: brown;
+            width: 100%;
+            font-size: 14px;
+        }
+        #entrante {
+            margin-top: 10px;
+        }
+    </style>
+    <title>ACTIVIDAD 2</title>
+</head>
+
+<body>
+    <div id="entrantes">
+        <H1>ENTRANTES</H1>
+        <ol id="lista">
+            <li class="li1">ENSALADAS</li>
+            <li class="li1">CHICKEN WINGS</li>
+            <li class="li1">HUMUS</li>
+            <li class="li1">CALAMARES A LA ROMANA</li>
+            <li class="li1">PAPAS BRAVAS</li>
+        </ol>
+        <div class="boton"><input type="number" id="elegido" placeholder="inserte un número">
+            <input type="button" value="ELEGIR" id="select" onclick="elegir()">
+        </div>
+        <div class="resultados">EL ENTRANTE ELEGIDO ES: <br>
+            <P id="resultado"></P>
+        </div>
+        <br>
+        <div class="boton anadir">ENTRANTE A AÑADIR <BR> <input type="text" id="entrante" placeholder="inserte un entrante para añadir">
+            <input type="button" value="AGREGAR" id="add" onclick="agregar()">
+        </div>
+        <br>
+        <div class="boton"><input type="number" id="borrar" placeholder="inserte un número">
+            <input type="button" value="BORRAR" id="remove" onclick="borrar()">
+            <div class="eliminad">EL ELEGIDO QUE HA SIDO
+                <br>
+                <P id="resEliminado"></P>
+            </div>
+        </div>
+    </div>
+    <div id="platoP">
+        <H1>PLATO PRINCIPAL</H1>
+        <ol id="listaPP">
+            <li class="li2">SALMÓN A LA PLANCHA CON ENSALADA</li>
+            <li class="li2">SECRETO DE CERDO CON VERDURAS SALTEADAS</li>
+            <li class="li2">PECHUGA DE POLLO CON PAPAS FRITAS</li>
+            <li class="li2">SOLOMILLO DE CERDO CON PAPAS AL HORNO</li>
+            <li class="li2">COSTILLA CON SALSA BRAVA Y PURE</li>
+        </ol>
+        <div class="boton"><input type="number" id="elegidoPP" placeholder="inserte un número">
+            <input type="button" value="ELEGIR" id="select" onclick="elegirPP()">
+        </div>
+        <br>
+        <div class="resultados">EL PLATO ELEGIDO ES: <br>
+            <P id="resultadoPP"></P>
+        </div>
+        <br>
+        <div class="boton anadir">PLATO A AÑADIR <br><input type="text" id="plato" placeholder="inserte un plato para añadir">
+            <input type="button" value="AGREGAR" id="add" onclick="agregarPP()">
+        </div>
+        <br>
+        <div class="boton"><input type="number" id="borrarPP" placeholder="inserte un número">
+            <input type="button" value="BORRAR" id="remove" onclick="borrarPP()">
+            <div class="eliminad">EL PLATO ELEGIDO QUE HA SIDO
+                <br>
+                <P id="resEliminadoPP"></P>
+            </div>
+        </div>
+    </div>
+    <div id="postre">
+        <H1>POSTRE</H1>
+        <ol id="listaP">
+            <li class="li3">VOLCÁN DE CHOCOLATE CON HELADO</li>
+            <li class="li3">TARTA DE LA ABUELA</li>
+            <li class="li3">ENSALADA DE FRUTAS</li>
+            <li class="li3">TIRAMISÚ</li>
+            <li class="li3">POSTRE DE LA CASA</li>
+        </ol>
+        <div class="boton"><input type="number" id="elegidoP" placeholder="inserte un número">
+            <input type="button" value="ELEGIR" id="select" onclick="elegirP()">
+        </div><br>
+        <div class="resultados">EL POSTRE ELEGIDO ES: <br>
+            <P id="resultadoP"></P>
+        </div>
+        <div class="boton anadir">POSTRE A AÑADIR <input type="text" id="postres" placeholder="inserte un postre para añadir">
+            <input type="button" value="AGREGAR" id="add" onclick="agregarP()">
+        </div>
+        <br>
+        <div class="boton"><input type="number" id="borrarP" placeholder="inserte un número">
+            <input type="button" value="BORRAR" id="remove" onclick="borrarP()">
+            <div class="eliminad">EL POSTRE ELEGIDO QUE HA SIDO
+                <br>
+                <P id="resEliminadoP"></P>
+            </div>
+        </div>
+    </div>
+        <script type="text/javascript" src="actividad2.js">
+        </script>
+</body>
+
+</html>
